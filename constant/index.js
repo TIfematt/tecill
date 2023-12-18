@@ -27,3 +27,8 @@ export const navLinks = [
   {href: '#properties', key:'support', title:'Properties'},
   {href: '/blog', key:'blog', title:'Blog'},
 ]
+
+export const getFullYear = () => {
+  const currentYear = new Date().getFullYear();
+  return currentYear;
+}
