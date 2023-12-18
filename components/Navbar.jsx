@@ -72,7 +72,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="hidden bg-secondary md:flex gap-7 w-3/12 items-center justify-evenly">
+      <div className="hidden bg-secondary md:flex gap-7 w-3/12 items-center justify-evenly outline-none">
         <div className="flex items-center">
           <HiMagnifyingGlass className="mr-7" />
           En

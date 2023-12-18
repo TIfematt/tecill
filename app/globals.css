@@ -12,6 +12,13 @@ body {
   padding: 0;
 }
 
+.heading {
+  @apply text-heading text-2xl lg:text-4xl md:text-[2rem] font-semibold tracking-wider  md:tracking-[0.08rem] lg:tracking-[0.09rem]
+}
+
+.text {
+  @apply text-text opacity-80 text-sm lg:text-base tracking-[0.035rem] lg:tracking-[0.04rem]
+}
 
 
 
