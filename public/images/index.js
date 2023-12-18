@@ -4,7 +4,7 @@ import hero_house from './hero_house.png'
 import morden_house from './morden_house.jpg'
 import window_house from './window_house.png'
 import tall_house from './tall_house.png'
-
+import properties from './properties.png'
 
 
 export {
@@ -13,5 +13,6 @@ export {
   hero_house,
   morden_house,
   window_house,
-  tall_house
+  tall_house,
+  properties
 }
