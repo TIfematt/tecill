@@ -11,7 +11,7 @@ const Navbar = () => {
   const [toggle, setIsToggle] = useState(false);
 
   return (
-    <nav className="flex sticky top-0 z-20">
+    <nav className="flex sticky top-0 z-50">
       {/* Mobile Nav */}
       <div className="bg-primary flex md:hidden items-center justify-around w-full py-[0.31rem]">
         <HiMenuAlt1
