@@ -22,7 +22,7 @@ const Hero = () => {
           >
             Contact Us
           </a>
-          {/* Mobile screen */}
+          {/* Mobile screen image */}
           <div className="relative flex md:hidden top-12 w-full px-8 left-0">
             <Image
               className=" z-20 h-auto w-auto  md:pb-20"
@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         {/* Big screen image */}
         <Image
-          className="hidden md:flex z-20 h-auto w-[50%] absolute mt-[5rem] right-0"
+          className="hidden md:flex z-20 h-auto w-[50%] absolute right-0"
           src={morden_house}
           unoptimized
           quality={80}

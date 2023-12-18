@@ -17,7 +17,7 @@ body {
 }
 
 .text {
-  @apply text-text opacity-80 text-sm lg:text-base tracking-[0.035rem] lg:tracking-[0.04rem]
+  @apply text-text  text-sm lg:text-base tracking-[0.035rem] lg:tracking-[0.04rem]
 }
 
 
