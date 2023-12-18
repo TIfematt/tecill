@@ -2,7 +2,14 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <section className=''>
+      <div>
+
+      </div>
+      <form action="submit" method='POST'>
+        
+      </form>
+    </section>
   )
 }
 

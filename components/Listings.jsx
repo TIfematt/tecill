@@ -3,16 +3,15 @@ import React from "react";
 import { properties } from "@/public/images";
 
 const Listings = () => {
-
   // properties card
-  const Properties = ({image, title, address, price}) => {
-    return(
+  const Properties = ({ image, title, address, price }) => {
+    return (
       <div className="flex flex-col gap-7 items-start">
         <div className="bg-secondary relative w-[18.187rem] md:w-[18.75rem] md:h-[14.62rem] lg:w-[23rem] lg:h-[17.93rem] h-[17.38rem] p-[.94rem]">
-          <Image 
+          <Image
             src={image}
             alt={`house listing in ${address}`}
-            objectFit="cover"
+            fill
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -27,8 +26,8 @@ const Listings = () => {
           </p>
         </div>
       </div>
-    )
-  }
+    );
+  };
   return (
     <section className="mt-small md:mt-medium lg:mt-large flex flex-col">
       <div className="flex flex-col gap-5 pl-4 md:pl-medium">
@@ -52,41 +51,40 @@ const Listings = () => {
       <div className="mt-7 md:mt-10 flex flex-col md:flex-row md:flex-wrap items-center gap-8 md:justify-evenly">
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
         {Properties({
           image: properties,
-          title: 'The Grand Estate',
-          address: 'Wuse Zone 2',
-          price: '#1.9million'
+          title: "The Grand Estate",
+          address: "Wuse Zone 2",
+          price: "#1.9million",
         })}
-      
       </div>
     </section>
   );
