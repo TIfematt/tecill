@@ -1,20 +1,28 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { properties } from "@/public/images";
+import { motion } from "framer-motion";
 
 const Listings = () => {
   // properties card
   const Properties = ({ image, title, address, price }) => {
     return (
       <div className="flex flex-col gap-7 items-start">
-        <div className="bg-secondary relative w-[18.187rem] md:w-[18.75rem] md:h-[14.62rem] lg:w-[23rem] lg:h-[17.93rem] h-[17.38rem] p-[.94rem]">
-          <Image
-            src={image}
-            alt={`house listing in ${address}`}
-            fill
-          />
-        </div>
-        <div className="flex flex-col gap-3 ">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [-40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="bg-secondary relative w-[18.187rem] md:w-[18.75rem] md:h-[14.62rem] lg:w-[23rem] lg:h-[17.93rem] h-[17.38rem] p-[.94rem]"
+        >
+          <Image src={image} alt={`house listing in ${address}`} fill />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+          className="flex flex-col gap-3 "
+        >
           <h1 className="text-heading text-lg md:text-xl lg:text-2xl font-bold tracking-wider">
             {title}
           </h1>
@@ -24,13 +32,21 @@ const Listings = () => {
           <p className="text-lg lg:text-xl text-primary tracking-wider">
             {price}
           </p>
-        </div>
+        </motion.div>
       </div>
     );
   };
   return (
-    <section className="mt-small md:mt-medium lg:mt-large flex flex-col">
-      <div className="flex flex-col gap-5 pl-4 md:pl-medium">
+    <section
+      id="properties"
+      className="mt-small md:mt-medium lg:mt-large flex flex-col"
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { x: [-40, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="flex flex-col gap-5 pl-4 md:pl-medium"
+      >
         <h3 className="text-primary text-base md:text-xl lg:text-2xl flex items-center gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +63,7 @@ const Listings = () => {
           Our Properties
         </h3>
         <h1 className="heading md:w-[21.125rem]">Most Popular Listings</h1>
-      </div>
+      </motion.div>
       <div className="mt-7 md:mt-10 flex flex-col md:flex-row md:flex-wrap items-center gap-8 md:justify-evenly">
         {Properties({
           image: properties,

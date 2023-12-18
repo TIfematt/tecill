@@ -1,7 +1,9 @@
+"use client";
 import { john_doe } from "@/public/images";
 import Image from "next/image";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Team = () => {
   const teamMembers = [
@@ -41,20 +43,35 @@ const Team = () => {
   }) => {
     return (
       <div className="flex flex-col max-w-max">
-        <div className="relative bg-secondary w-[18.5rem] md:w-[19.75rem] md:h-[14.62rem] lg:w-[23rem] lg:h-[17.93rem] h-[14.38rem] p-[.94rem]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [-40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="relative bg-secondary w-[18.5rem] md:w-[19.75rem] md:h-[14.62rem] lg:w-[23rem] lg:h-[17.93rem] h-[14.38rem] p-[.94rem]"
+        >
           <Image
             fill
             src={image}
             alt={`Team member image of ${name}`}
             className=""
           />
-        </div>
-        <div className="py-3">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+          className="py-3"
+        >
           <h1 className="font-bold text-heading tracking-wider text-lg lg:text-2xl ">
             {name}
           </h1>
-        </div>
-        <div className="flex items-center justify-between">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+          className="flex items-center justify-between"
+        >
           <h3 className="text-heading font-semibold text-base lg:text-lg tracking-[0.045rem] max-w-[6rem] md:max-w-max">
             {position}
           </h3>
@@ -70,13 +87,18 @@ const Team = () => {
               <FaLinkedinIn className="text-primary" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     );
   };
   return (
     <section className="mt-small md:mt-medium lg:mt-large">
-      <div className="flex flex-col gap-5 pl-4 md:pl-medium">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { x: [-40, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+        className="flex flex-col gap-5 pl-4 md:pl-medium"
+      >
         <h3 className="text-primary text-base md:text-xl lg:text-2xl flex items-center gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +115,7 @@ const Team = () => {
           Our Team
         </h3>
         <h1 className="heading md:w-[33.125rem]">Meet Our Incredible Agents</h1>
-      </div>
+      </motion.div>
       <div className="mt-10 flex flex-col md:flex-row md:flex-wrap md:justify-evenly items-center gap-8">
         {teamMembers.map((team, key) => (
           <TeamMembersCard

@@ -1,12 +1,18 @@
+"use client";
 import { window_house } from "@/public/images";
 import Image from "next/image";
 import React from "react";
-import { HiArrowRight } from "react-icons/hi2";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <section>
-      <div className="w-full bg-secondary py-[4rem] md:py-4 flex flex-col md:flex-row items-center">
+    <section id="about">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { y: [40, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="w-full bg-secondary py-[4rem] md:py-4 flex flex-col md:flex-row items-center"
+      >
         <div className="text-center flex flex-col items-center gap-3 border-b-2 md:border-b-0 md:border-r-2 border-gray-400 md:px-[2.5rem] lg:px-[8rem] w-3/12 py-[3.75rem] md:py-0">
           <h1 className="text-primary font-bold tracking-[0.045rem]  md:text-2xl ">
             500+
@@ -39,10 +45,15 @@ const AboutUs = () => {
             Operating Years
           </h2>
         </div>
-      </div>
+      </motion.div>
       {/* About us */}
       <div className="mt-small md:mt-medium lg:mt-large flex flex-col md:flex-row gap-small md:gap-medium lg:gap-large md:justify-around px-2 md:px-8 items-center">
-        <article className="flex flex-col md:w-[97%] lg:w-[35%] gap-5">
+        <motion.article
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { x: [-40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="flex flex-col md:w-[97%] lg:w-[35%] gap-5"
+        >
           <h3 className="text-primary text-base md:text-xl lg:text-2xl flex items-center gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,17 +72,27 @@ const AboutUs = () => {
           <h1 className="heading ">
             We Are Committed To Selling The Best Properties
           </h1>
-          <p className="text ">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="text "
+          >
             Welcome to Tecil Homes, where our commitment to excellence is woven
             into the fabric of our story. Established with a vision to redefine
             the real estate experience, we take pride in offering more than just
             properties; we provide a journey toward finding a home that
             resonates with your aspirations.
-          </p>
-        </article>
-        <div className="">
+          </motion.p>
+        </motion.article>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={[{ opacity: 1 }, { y: [40, 0] }]}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className=""
+        >
           <Image alt="window house" src={window_house} className="" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

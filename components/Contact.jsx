@@ -1,12 +1,19 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <section
       id="contact"
       className="bg-secondary mt-small md:mt-medium lg:mt-large flex flex-col md:flex-row justify-evenly py-8"
     >
-      <article className="flex flex-col  gap-5">
+      <motion.article
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { x: [-40, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+        className="flex flex-col  gap-5"
+      >
         <h3 className="text-primary text-base md:text-xl lg:text-2xl flex items-center gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +34,8 @@ const Contact = () => {
           Welcome to Tecil, where our commitment to excellence is woven into the
           fabric of our story. Established with a vision to red
         </p>
-      </article>
-      <form  method="POST" className="px-4 md:px-0 flex flex-col gap-7">
+      </motion.article>
+      <form method="POST" className="px-4 md:px-0 flex flex-col gap-7">
         <h1 className="text-heading font-semibold text-lg md:text-base lg:text-lg">
           Send Us a Message
         </h1>
@@ -48,7 +55,9 @@ const Contact = () => {
             placeholder="Enter Your Message Here"
             className="p-[1.125rem] bg-white w-[18rem] h-[10.6rem] md:w-[21rem] lg:w-[27rem]"
           />
-          <button className="bg-primary text-white p-4 md:max-w-max ">Send Message</button>
+          <button className="bg-primary text-white p-4 md:max-w-max ">
+            Send Message
+          </button>
         </div>
       </form>
     </section>

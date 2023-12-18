@@ -6,7 +6,7 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 import { white_logo } from "@/public/images";
 import Image from "next/image";
 import { LiaFlagUsaSolid } from "react-icons/lia";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   const [toggle, setIsToggle] = useState(false);
 
@@ -27,7 +27,11 @@ const Navbar = () => {
         </a>
         <HiMagnifyingGlass className="text-white w-6 h-6" />
         {toggle && (
-          <div className="h-[100vh] bg-primary absolute top-0 w-[80vw] left-0 z-10">
+          <motion.div
+            whileInView={[{ opacity: 1 }, { x: [-240, 0] }]}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="h-[100vh] bg-primary absolute top-0 w-[80vw] left-0 z-10"
+          >
             <HiX
               className="absolute right-0 text-white mr-[12px] top-[12px] w-[2rem] h-[2rem]"
               onClick={() => setIsToggle(!toggle)}
@@ -47,7 +51,7 @@ const Navbar = () => {
                 );
               })}
             </ul>
-          </div>
+          </motion.div>
         )}
       </div>
 

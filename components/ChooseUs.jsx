@@ -1,9 +1,12 @@
+"use client";
+
 import { tall_house } from "@/public/images";
 import Image from "next/image";
 import React from "react";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { GrShieldSecurity, GrStatusGood } from "react-icons/gr";
 import { SlSupport } from "react-icons/sl";
+import { motion } from "framer-motion";
 
 const ChooseUs = () => {
   const ServiceCard = ({ icon, title, text }) => {
@@ -23,10 +26,20 @@ const ChooseUs = () => {
   };
   return (
     <section className="mt-small md:mt-medium lg:mt-large flex flex-col-reverse md:flex-row gap-4 md:justify-around">
-      <div className="">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { x: [-40, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className=""
+      >
         <Image priority src={tall_house} alt="Tall House" className="" />
-      </div>
-      <div className="flex flex-col max-w-full ">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={[{ opacity: 1 }, { y: [15, 0] }]}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className="flex flex-col max-w-full "
+      >
         <article className="flex flex-col gap-5 w-full px-4  md:w-[24.31606rem] lg:w-[31.6875rem] ">
           <h3 className="text-primary text-base md:text-xl lg:text-2xl flex items-center gap-4">
             <svg
@@ -81,7 +94,7 @@ const ChooseUs = () => {
             Contact Us
           </a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
