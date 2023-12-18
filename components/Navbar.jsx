@@ -57,7 +57,13 @@ const Navbar = () => {
 
       {/* Big screen Nav */}
       <div className="hidden w-9/12 bg-primary md:flex items-center justify-evenly py-3">
-        <Image alt="logo" src={white_logo} className="relative w-auto h-auto" />
+        <a href="/">
+          <Image
+            alt="logo"
+            src={white_logo}
+            className="relative w-auto h-auto"
+          />
+        </a>
         <div className="items-center justify-evenly">
           <ul className="flex  gap-[2.5rem] items-center  ">
             {navLinks.map((items) => {
