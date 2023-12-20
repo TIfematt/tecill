@@ -20,6 +20,9 @@ body {
   @apply text-text  text-sm lg:text-base tracking-[0.035rem] lg:tracking-[0.04rem]
 }
 
+.blog-header {
+  background-image: url('../public/images/blog_header.jpg');
+}
 
 
 

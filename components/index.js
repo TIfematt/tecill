@@ -8,6 +8,8 @@ import Footer from "./Footer";
 import Services from "./Services";
 import Team from "./Team";
 import Testimonials from "./Testimonials";
+import BlogCard from "./BlogCard";
+import BlogNav from "./BlogNav";
 
 export {
   Hero,
@@ -19,5 +21,7 @@ export {
   Footer,
   Services,
   Team,
-  Testimonials
+  Testimonials,
+  BlogCard,
+  BlogNav
 }
