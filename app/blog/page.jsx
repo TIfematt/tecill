@@ -1,6 +1,5 @@
 import React from "react";
-import { blog_header } from "@/public/images";
-import { BlogCard } from "@/components";
+import { BlogCard, Footer, NewsLetter } from "@/components";
 import { blogPost } from "@/constant";
 
 const page = () => {
@@ -15,7 +14,8 @@ const page = () => {
           Your Dream Home, Now A Reality
         </h1>
       </header>
-      <section className="mt:small md:mt:medium lg:mt-large flex flex-col items-center gap-8">
+      {/* Blog section */}
+      <section className="mt-small md:mt-medium lg:mt-large flex flex-col items-center gap-8">
         <div className="flex flex-col items-center md:flex-row md:flex-wrap  md:justify-evenly gap-5 md:gap-10">
           {blogPost.map((post, key) => (
             <BlogCard
@@ -32,7 +32,9 @@ const page = () => {
           Load More{" "}
         </button>
       </section>
-
+      {/* NewsLetter */}
+      <NewsLetter />
+      <Footer />
     </main>
   );
 };

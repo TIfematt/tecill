@@ -10,6 +10,7 @@ import Team from "./Team";
 import Testimonials from "./Testimonials";
 import BlogCard from "./BlogCard";
 import BlogNav from "./BlogNav";
+import NewsLetter from "./NewsLetter";
 
 export {
   Hero,
@@ -23,5 +24,6 @@ export {
   Team,
   Testimonials,
   BlogCard,
-  BlogNav
+  BlogNav,
+  NewsLetter
 }

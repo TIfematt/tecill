@@ -26,7 +26,7 @@ export const navLinks = [
   {href: '/', key:'home', title:'Home'},
   {href: '#about', key:'about', title:'About'},
   {href: '#services', key:'support', title:'Services'},
-  {href: '#properties', key:'support', title:'Properties'},
+  {href: '#properties', key:'properties', title:'Properties'},
   {href: '/blog', key:'blog', title:'Blog'},
 ]
 
