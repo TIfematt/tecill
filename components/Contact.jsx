@@ -1,8 +1,95 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
+
+  // success or failure messages
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  const handleValidation = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (fullname.length <= 0) {
+      tempErrors["fullname"] = true;
+      isValid = false;
+    } else {
+      tempErrors["fullname"] = false; // Reset the error state if it's now valid
+    }
+
+    if (email.length <= 0) {
+      tempErrors["email"] = true;
+      isValid = false;
+    } else {
+      tempErrors["email"] = false;
+    }
+
+    if (message.length <= 0) {
+      tempErrors["message"] = true;
+      isValid = false;
+    } else {
+      tempErrors["message"] = false;
+    }
+
+    setErrors({ ...tempErrors });
+    return isValid;
+  };
+
+  //   Handling form submit
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let isValidForm = handleValidation();
+
+    if (isValidForm) {
+      setIsSending(!isSending);
+      await fetch("/api/mail", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          fullname: fullname,
+          message: message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          if (response.ok) {
+            setEmail("");
+            setFullname("");
+            setMessage("");
+            setIsSending(false);
+          } else {
+            // Error occurred while sending email
+            throw new Error("Error sending email");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          setShowSuccessMessage(false);
+          setShowFailureMessage(true);
+          setIsSending(false);
+          return;
+        });
+
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+    }
+    console.log(fullname, email, message);
+  };
+
   return (
     <section
       id="contact"
@@ -31,32 +118,65 @@ const Contact = () => {
         </h3>
         <h1 className="heading pr-4 md:p-0">Contact Us </h1>
         <p className="text p-4 md:p-0 max-w-max md:max-w-[21rem] lg:max-w-[27.4rem]">
-          Welcome to Tecil, where our commitment to excellence is woven into the
-          fabric of our story. Established with a vision to red
+          Contact us today for available listings and tailored experience
         </p>
       </motion.article>
-      <form method="POST" className="px-4 md:px-0 flex flex-col gap-7">
+      <form
+        method="POST"
+        onSubmit={handleSubmit}
+        className="px-4 md:px-0 flex flex-col gap-7"
+      >
         <h1 className="text-heading font-semibold text-lg md:text-base lg:text-lg">
           Send Us a Message
         </h1>
         <div className="relative flex flex-col gap-[1.25rem] max-w-max">
           <input
             type="text"
+            required
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
             placeholder="Enter Your Name Here"
             className="p-[1.125rem] bg-white w-[18rem] md:w-[21rem] lg:w-[27rem]"
           />
+          {errors.fullname && (
+            <p className="text-red-500 text-sm ">Please enter your name.</p>
+          )}
           <input
-            type="text"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter Your Email Here"
             className="p-[1.125rem] bg-white w-[18rem] md:w-[21rem] lg:w-[27rem]"
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm">Please enter a valid email.</p>
+          )}
           <textarea
             type="text"
+            required
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Enter Your Message Here"
             className="p-[1.125rem] bg-white w-[18rem] h-[10.6rem] md:w-[21rem] lg:w-[27rem]"
           />
-          <button className="bg-primary text-white p-4 md:max-w-max ">
-            Send Message
+          {errors.message && (
+            <p className="text-red-500 text-sm">Please enter your message.</p>
+          )}
+          {showSuccessMessage && (
+            <p className="text-green-500 text-sm">Message sent successfully!</p>
+          )}
+          {showFailureMessage && (
+            <p className="text-red-500 text-sm">
+              Failed to send message. Please try again.
+            </p>
+          )}
+          <button
+            disabled={isSending}
+            type="submit"
+            className="bg-primary text-white p-4 md:max-w-max "
+          >
+            {isSending ? "Sending.." : "Send Message"}
           </button>
         </div>
       </form>

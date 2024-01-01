@@ -79,23 +79,23 @@ const Services = () => {
       >
         {ServiceCard({
           icon: <FaHouse />,
-          title: "Buy A Home",
-          text: "With a focus on forward-thinking services, we seamlessly integrate the latest industry trends, cutting-edge technology, and modern design ",
+          title: "Buy a Land",
+          text: "Realize your vision for the perfect property with our tailored solutions and expert guidance.",
         })}
         {ServiceCard({
           icon: <FaHouse />,
-          title: "Rent A Home",
-          text: "With a focus on forward-thinking services, we seamlessly integrate the latest industry trends, cutting-edge technology, and modern design ",
+          title: "Buy A Home",
+          text: "Find your perfect rental space effortlessly, benefitting from our dedicated approach and industry knowledge.",
         })}
         {ServiceCard({
           icon: <FaHouse />,
           title: "Sell Property",
-          text: "With a focus on forward-thinking services, we seamlessly integrate the latest industry trends, cutting-edge technology, and modern design ",
+          text: "Maximize your property's value with our strategic approach and comprehensive market understanding.",
         })}
         {ServiceCard({
           icon: <FaHouse />,
           title: "Become An Agent",
-          text: "With a focus on forward-thinking services, we seamlessly integrate the latest industry trends, cutting-edge technology, and modern design ",
+          text: "Embark on a rewarding journey, equipped with our guidance and industry-leading support system.",
         })}
       </motion.div>
     </>

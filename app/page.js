@@ -9,9 +9,9 @@ export default function Home() {
       <AboutUs />
       <Services />
       <ChooseUs />
-      <Listings />
+      {/* <Listings /> */}
       <Testimonials />
-      <Team />
+      {/* <Team /> */}
       <Contact />
       <Footer />
     </main>

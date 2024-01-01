@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navLinks } from "@/constant";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 import { HiMagnifyingGlass } from "react-icons/hi2";
@@ -10,6 +10,24 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [toggle, setIsToggle] = useState(false);
 
+  const closeMobileMenu = () => {
+    setIsToggle(false);
+  };
+
+  // Close the menu if clicked outside the menu
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (toggle && !e.target.closest(".mobile-menu")) {
+        closeMobileMenu();
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [toggle]);
   return (
     <nav className="flex sticky top-0 z-50">
       {/* Mobile Nav */}

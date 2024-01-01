@@ -10,20 +10,20 @@ import { motion } from "framer-motion";
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  const teminonies = [
+  const testimonials = [
     {
-      title: "John Doe",
-      text: "We are to help you build a excellent build, with us nothing is impossible. See what we have done and what they have to say about our work perform.",
+      title: "Peace Ada",
+      text: "With their expertise, nothing is impossible. Their work speaks volumes about their commitment to excellence.",
       image: john_doe,
     },
     {
-      title: "Jane Smith",
-      text: "We are to help you build a excellent build, with us nothing is impossible. See what we have done and what they have to say about our work perform.",
+      title: "Jane Odisa",
+      text: "They make the impossible, possible. Their work reflects their dedication and exceptional performance.",
       image: john_doe,
     },
     {
-      title: "Foo Bar",
-      text: "We are to help you build a excellent build, with us nothing is impossible. See what we have done and what they have to say about our work perform.",
+      title: "Lerry white",
+      text: "Building excellence is their forte. Witness their outstanding work and impeccable performance.",
       image: john_doe,
     },
   ];
@@ -105,7 +105,7 @@ const Testimonials = () => {
         </div>
       </div>
       <div className="mt-12 relative ">
-        {teminonies.map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <TestimonialCards
             key={index}
             index={index}
@@ -121,7 +121,7 @@ const Testimonials = () => {
           className="py-4 px-[0.94rem]"
           onClick={() =>
             setCurrentIndex(
-              currentIndex === 0 ? teminonies.length - 1 : currentIndex - 1
+              currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1
             )
           }
         >
@@ -130,7 +130,7 @@ const Testimonials = () => {
         <button
           className="py-4 px-[0.94rem] bg-white hover:bg-secondary"
           onClick={() =>
-            setCurrentIndex((currentIndex + 1) % teminonies.length)
+            setCurrentIndex((currentIndex + 1) % testimonials.length)
           }
         >
           <IoIosArrowRoundForward className="text-primary w-6 h-6 " />

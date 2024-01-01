@@ -69,22 +69,22 @@ const ChooseUs = () => {
           {ServiceCard({
             icon: <IoPricetagsOutline />,
             title: "Best Price",
-            text: "Our unwavering commitment to putting clients first shapes every decision we make",
+            text: "Ensuring competitive rates, we prioritize your financial benefit in every transaction.",
           })}
           {ServiceCard({
             icon: <GrStatusGood />,
             title: "Best Interest",
-            text: "Our unwavering commitment to putting clients first shapes every decision we make",
+            text: "Dedicated to serving your best interest, we align our decisions with your goals and aspirations.",
           })}
           {ServiceCard({
             icon: <SlSupport />,
             title: "Client-Centric Philosophy",
-            text: "Our unwavering commitment to putting clients first shapes every decision we make",
+            text: "Built on a client-first philosophy, our decisions revolve around your needs and satisfaction.",
           })}
           {ServiceCard({
             icon: <GrShieldSecurity />,
             title: "Security",
-            text: "Our unwavering commitment to putting clients first shapes every decision we make",
+            text: "Implementing robust security measures, we safeguard your interests at every step.",
           })}
 
           <a

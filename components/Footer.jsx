@@ -52,11 +52,11 @@ const Footer = () => {
         </div>
         {/* Address */}
         <div className="flex flex-col">
-          <h1 className="text-white text-base">Head Office</h1>
+          {/* <h1 className="text-white text-base">Head Office</h1>
           <p className="text-[0.875rem] text-white opacity-75 w-[18.87rem] md:w-[12.8rem] lg:w-[18.87rem]">
             Xilliams Corner Wine © 2017. 1112 A Market St # Ste B22,
             Charlottesville, CA 45565
-          </p>
+          </p> */}
           {/* News letter */}
           <form action="" method="post" className="flex flex-col mt-12">
             <h3 className="text-white text-base ">News letter</h3>
@@ -83,7 +83,7 @@ const Footer = () => {
           href="tel:+234819004001"
           className="text-white opacity-75 border-b-2 border-b-white pb-3 text-lg font-light"
         >
-          +234 819 004 001
+          +234 915 9999 994
         </a>
         <p className="text-white text-sm md:text-xs opacity-75  pb-3 lg:text-lg font-normal md:w-[12rem] lg:w-max">
           © {getFullYear()} Tecill Homes Ltd. All Rights Reserved.
